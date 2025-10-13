@@ -81,7 +81,7 @@ def run_VGGT(model, images, dtype, resolution=518):
         # Extrinsic and intrinsic matrices, following OpenCV convention (camera from world)
         extrinsic, intrinsic = pose_encoding_to_extri_intri(pose_enc, images.shape[-2:])
         # Predict Depth Maps
-        depth_map, depth_conf = model.depth_head(aggregated_tokens_list, images, ps_idx)
+        depth_map, depth_conf = model.depth_head(aggregated_tokens_list, images, ps_idx, frames_chunk_size=1)
 
     extrinsic = extrinsic.squeeze(0).cpu().numpy()
     intrinsic = intrinsic.squeeze(0).cpu().numpy()
