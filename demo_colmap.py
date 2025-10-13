@@ -161,6 +161,7 @@ def demo_fn(args):
                 query_frame_num=args.query_frame_num,
                 keypoint_extractor="aliked+sp",
                 fine_tracking=args.fine_tracking,
+                max_points_num=8192
             )
 
             torch.cuda.empty_cache()
