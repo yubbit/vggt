@@ -212,6 +212,7 @@ def main(args):
             shared_camera=shared_camera,
             camera_type=args.camera_type,
             points_rgb=points_rgb,
+            min_inlier_per_frame=0,
         )
 
         if reconstruction is None:
